@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: lock-postgres
+
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    container_name: lock-redis
+
+    ports:
+      - "6379:6379"
+
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
