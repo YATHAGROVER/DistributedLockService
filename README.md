@@ -86,14 +86,3 @@ http://localhost:8080
 
 ---
 
-## API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/locks` | Acquire a lock |
-| DELETE | `/locks/{resource}` | Release a lock |
-| GET | `/locks/{resource}` | Check lock status |
-| POST | `/heartbeat` | Renew lock lease |
-
----
-
